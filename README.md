@@ -17,11 +17,13 @@ Provide a quick workshop to understand how to use the K8s AC with the Lacework p
 
 https://docs.lacework.com/integrate-proxy-scanner#create-a-proxy-scanner-integration-in-lacework
 
-2. In your lacework account, enable the Critical CVE (LW_CONTAINER_POLICY_4) and apt-get caches are not cleared in Dockerfile (LW_CONTAINER_POLICY_10) policies and associate them to the proxy scanner you created.
+2. In your lacework account, enable the "Critical CVE" (LW_CONTAINER_POLICY_4) and "apt-get caches are not cleared in Dockerfile" (LW_CONTAINER_POLICY_10) policies and associate them to the proxy scanner you created.
 
 https://docs.lacework.com/container-vulnerability-policies#default-policies
 
 https://docs.lacework.com/container-vulnerability-policies#associate-policies-with-a-registry-integration
+
+Also be sure that the 2 policies above are set to "Block" (vs. "Allow"). This is done by going to the policies page, clicking on the policy, and using the Allow/Block toggle.
 
 3. Run Terraform apply to setup the certs & helm chart for the admission controller + proxy scanner
 
